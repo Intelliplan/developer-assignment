@@ -1,0 +1,11 @@
+require 'rubygems'
+require 'bundler/setup'
+
+Bundler.require :default
+
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+  puts "Failed to load rspec. Did you run bundle install?"
+end
