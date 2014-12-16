@@ -17,39 +17,14 @@ Please resend the assigment intact. That is, in the same structure you got it, *
 
 #### Ruby
 ```bash
-  root
+  developer_assignment
     |- bin/
-        +- intelliplan      # This should be a executable file. I.e. the main entry point for the assignment.
-    |- lib/                 # This is where you put your code.
-    |- specs/               # This is where you put your tests.
-    |- README.md            # This document
-    |- rakefile             # Helper tasks to build, test and distribute your code 
+        +- candidate_locator    # This should be a executable file. I.e. the main entry point for the assignment.
+    |- lib/                     # This is where you put your code.
+    |- specs/                   # This is where you put your tests.
+    |- README.md                # This document
+    |- rakefile                 # Helper tasks to build, test and distribute your code 
 ```
-
-#### .net
-
-```bash
-TBD
-```
-
-#### javascript
-
-```bash
-TBD
-```
-#### clojure
-
-```bash
-  intelliplan
-    |- doc/
-    |- resources/                 # This is where you put your code.
-    |- src/               # This is where you put your tests.
-    |- test/               # This is where you put your tests.
-    |- LICENSE
-    |- project.clj
-    |- README.md            # This document
-```
-
 
 #### Good Luck!
 
