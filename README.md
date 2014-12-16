@@ -10,46 +10,12 @@ Just to be clear. The purpose of the assignment is for you to show how you code,
 ### Regarding tools and external libraries
 You are not allowed to use any other external libraries than supplied. This is to make sure that everyone has the same starting point.
 
-### Regarding the folder structure
-Please resend the assigment intact. That is, in the same structure you got it, *with* all the files that came with it.
+### Skeleton
+The assigment can be solved in **ruby**, **javascript**, **clojure** and **.net**. Each language resides in a separate branch in this repository.
+As reference please read the **README.md** of the language of your choise.
 
-### Folder structure
-
-#### Ruby
-```bash
-  root
-    |- bin/
-        +- intelliplan      # This should be a executable file. I.e. the main entry point for the assignment.
-    |- lib/                 # This is where you put your code.
-    |- specs/               # This is where you put your tests.
-    |- README.md            # This document
-    |- rakefile             # Helper tasks to build, test and distribute your code 
-```
-
-#### .net
-
-```bash
-TBD
-```
-
-#### javascript
-
-```bash
-TBD
-```
-#### clojure
-
-```bash
-  intelliplan
-    |- doc/
-    |- resources/                 # This is where you put your code.
-    |- src/               # This is where you put your tests.
-    |- test/               # This is where you put your tests.
-    |- LICENSE
-    |- project.clj
-    |- README.md            # This document
-```
-
+##### NOTE!
+Please resend the assigment intact as a **zip-archive**. That is, in the same structure you got it, *with* all the files that came with it.
 
 #### Good Luck!
 
