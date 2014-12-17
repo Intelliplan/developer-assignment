@@ -1,6 +1,6 @@
 ## Assignment Instructions 
 
-The assignment description can be located at [iCALOC2014.md](iCALOC2014.md)
+The assignment description can be found at [iCALOC2014.md](iCALOC2014.md)
 
 ### Time limit
 The assignment should be solved and resent to Intelliplan within 3 days, starting when you receive the assignment.
