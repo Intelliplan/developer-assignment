@@ -5,7 +5,10 @@ Bundler.require :default
 
 begin
   require 'rspec/core/rake_task'
-  RSpec::Core::RakeTask.new(:spec)
+  task(:spec).clear
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.verbose = false
+  end
 rescue LoadError
   puts "Failed to load rspec. Did you run bundle install?"
 end
