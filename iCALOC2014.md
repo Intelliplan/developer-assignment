@@ -48,6 +48,6 @@ If no candidate fulfils the criteria, the list of candidates should be substitut
 ### output:
 ```
 {A,B}: 1,3
-{B}||{C}: 1,2,3,4
+{B},{C}: 1,2,3,4
 {E}: None apply
 ```
