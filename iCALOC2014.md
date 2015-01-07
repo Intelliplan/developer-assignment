@@ -27,7 +27,7 @@ The output should be presented on the form:
 
 {EXAMPLE}: [comma separated list of candidate identifiers]
 
-If no candidate fulfils the criteria, the list of candidates should be substituted by the text: *None apply*.
+If no candidate fulfils the criteria, the list of candidates should be substituted by the text: **_None apply_**.
 
 ## Example
 
