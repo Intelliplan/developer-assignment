@@ -6,10 +6,12 @@ require 'albacore/ext/teamcity'
 
 Albacore::Tasks::Versionizer.new :versioning
 
+SOLUTION_FILE = 'src/icaloc2014.sln'
+
 desc 'Perform fast build (warn: doesn\'t d/l deps)'
 build :quick_build do |b|
   b.logging = 'detailed'
-  b.sln     = 'src/icaloc2014.sln'
+  b.sln     = SOLUTION_FILE
 end
 
 desc 'restore all nugets as per the packages.config files'
@@ -20,26 +22,14 @@ end
 
 desc 'Perform full build'
 build :build => [:versioning, :restore] do |b|
-  b.sln = 'src/MyProj.sln'
-  # alt: b.file = 'src/MyProj.sln'
+  b.sln = SOLUTION_FILE
 end
 
-directory 'build/pkg'
-
-desc 'package nugets - finds all projects and package them'
-nugets_pack :create_nugets => ['build/pkg', :versioning, :build] do |p|
-  p.files   = FileList['src/**/*.{csproj,fsproj,nuspec}'].
-    exclude(/Tests/)
-  p.out     = 'build/pkg'
-  p.exe     = 'tools/NuGet.exe'
-  p.with_metadata do |m|
-    m.description = 'A cool nuget'
-    m.authors = 'Henrik'
-    m.version = ENV['NUGET_VERSION']
-  end
-  p.with_package do |p|
-    p.add_file 'file/relative/to/proj', 'lib/net40'
-  end
+desc 'Run unit tests'
+test_runner :test => [:restore, :build] do |t|
+  t.files = FileList['src/**/bin/**/Debug/*.Test.dll']
+  t.exe   = FileList['src/packages/NUnit.Runners.*/**/tools/nunit-console.exe'].first
+  t.add_parameter "/xml=#{Dir.pwd}/build/TestResults.xml"
+  t.copy_local
 end
 
-task :default => :create_nugets
