@@ -11,11 +11,58 @@ If there are any uncertainties regarding the assignment, please don't hesitate t
 Just to be clear. The purpose of the assignment is for you to show how you code, reason and design. Not take forever and be difficult.
 
 ### Regarding tools and external libraries
-You are not allowed to use any other external libraries than supplied. This is to make sure that everyone has the same starting point.
+You are allowed to add in a testing and mocking framework of your choice. We won't however allow other "helping" frameworks. What comes with .net should be sufficient.
 
-### Skeleton
-The assignment can be solved in **ruby**, **javascript**, **clojure** and **.net**. Each language resides in a separate branch in this repository.
-As reference please read the **README.md** of the language of your choice.
+### Regarding the folder structure
+Please resend the assigment intact. That is, in the same structure you got it, *with* all the files that came with it.
+
+### Folder structure
+
+#### C# .net
+```bash
+  developer_assignment
+    |- src/
+        +- bin/                 # Binary output
+        +- obj/                 # Stuff you don't care about
+        +- Properties/          # Assembly info
+        +- icaloc2014.csproj    # Project cruft
+        +- icaloc2014.sln       # Solution cruft
+        +- Program.cs           # Main entry point of program
+    |- Gemfile                  # Gem dependencies
+    |- Gemfile.lock             # Gems locked down
+    |- iCALOC2014.md            # The assignment
+    |- LICENSE                  # License agreement
+    |- rakefile                 # Helper tasks to build, test and distribute your code 
+    |- README.md                # This document
+```
+
+#### HowTo's
+
+##### Gems
+The project uses [bundler](http://www.bundler.io) to manage gems.
+
+All you need to do is to install bundler:
+```bash
+$ gem install bundler
+```
+And install the needed gems:
+
+```bash
+$ bundle install
+```
+
+##### Rake
+
+To compile the project
+```bash
+$ bundle exec rake quick_build
+```
+
+To run specs
+```bash
+$ bundle exec rake test
+```
+
 
 ##### NOTE!
 Please resend the assignment intact as a **zip-archive**. That is, in the same structure you got it, *with* all the files that came with it.
