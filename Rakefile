@@ -9,7 +9,7 @@ Albacore::Tasks::Versionizer.new :versioning
 desc 'Perform fast build (warn: doesn\'t d/l deps)'
 build :quick_build do |b|
   b.logging = 'detailed'
-  b.sln     = 'src/MyProj.sln'
+  b.sln     = 'src/icaloc2014.sln'
 end
 
 desc 'restore all nugets as per the packages.config files'
