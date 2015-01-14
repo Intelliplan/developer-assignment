@@ -15,9 +15,8 @@ build :quick_build do |b|
 end
 
 desc 'restore all nugets as per the packages.config files'
-nugets_restore :restore do |p|
-  p.out = 'src/packages'
-  p.exe = 'tools/NuGet.exe'
+task :restore do 
+  sh "nuget install src/packages.config -OutputDirectory src/packages"
 end
 
 desc 'Perform full build'

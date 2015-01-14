@@ -51,6 +51,16 @@ And install the needed gems:
 $ bundle install
 ```
 
+##### Nuget and packages
+Nuget needs to be on you **PATH**.
+
+To restore your packages simply run:
+
+```bash
+$ bundle exec rake restore
+```
+
+
 ##### Rake
 
 To compile the project
