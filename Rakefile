@@ -32,3 +32,5 @@ test_runner :test => [:restore, :build] do |t|
   t.copy_local
 end
 
+
+task :default => :test
