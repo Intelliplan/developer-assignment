@@ -7,6 +7,7 @@ require 'albacore/ext/teamcity'
 Albacore::Tasks::Versionizer.new :versioning
 
 SOLUTION_FILE = 'src/icaloc2014.sln'
+SRC_ROOT = 'src/icaloc2014/'
 
 desc 'Perform fast build (warn: doesn\'t d/l deps)'
 build :quick_build do |b|
@@ -16,7 +17,7 @@ end
 
 desc 'restore all nugets as per the packages.config files'
 task :restore do 
-  sh "nuget install src/packages.config -OutputDirectory src/packages"
+  sh "nuget install #{SRC_ROOT}packages.config -OutputDirectory src/packages"
 end
 
 desc 'Perform full build'
@@ -26,11 +27,9 @@ end
 
 desc 'Run unit tests'
 test_runner :test => [:restore, :build] do |t|
-  t.files = FileList['src/**/bin/**/Debug/*.Test.dll']
-  t.exe   = FileList['src/packages/NUnit.Runners.*/**/tools/nunit-console.exe'].first
-  t.add_parameter "/xml=#{Dir.pwd}/build/TestResults.xml"
+  t.files = FileList['src/icaloc2014.test/**/bin/**/Debug/*.test.dll']
+  t.exe   = FileList["#{SRC_ROOT}/packages/NUnit.Runners.*/**/tools/nunit-console.exe"].first
   t.copy_local
 end
-
 
 task :default => :test
