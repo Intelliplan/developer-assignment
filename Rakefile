@@ -32,4 +32,9 @@ test_runner :test => [:restore, :build] do |t|
   t.copy_local
 end
 
+desc 'Run the application'
+task :run => [:restore, :build] do
+  sh 'mono src/icaloc2014/bin/Debug/icaloc2014.exe'
+end
+
 task :default => :test
