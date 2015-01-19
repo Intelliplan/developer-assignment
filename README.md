@@ -22,18 +22,27 @@ Please resend the assigment intact. That is, in the same structure you got it, *
 ```bash
   developer_assignment
     |- src/
-        +- bin/                 # Binary output
-        +- obj/                 # Stuff you don't care about
-        +- Properties/          # Assembly info
-        +- icaloc2014.csproj    # Project cruft
-        +- icaloc2014.sln       # Solution cruft
-        +- Program.cs           # Main entry point of program
-    |- Gemfile                  # Gem dependencies
-    |- Gemfile.lock             # Gems locked down
-    |- iCALOC2014.md            # The assignment
-    |- LICENSE                  # License agreement
-    |- rakefile                 # Helper tasks to build, test and distribute your code 
-    |- README.md                # This document
+      |-icaloc2014.test/
+        |- bin/                     # Binary output
+        |- obj/                     # Stuff you don't care about
+           icaloc2014.test.csproj   # Test project cruft
+           packages.config          # Nuget config
+           Test.cs                  # Test class
+      |-icaloc2014/
+        |- bin/                     # Binary output
+        |- obj/                     # Stuff you don't care about
+        |- packages/                # Nuget packages
+        |- Properties/              # Assembly info
+           icaloc2014.csproj        # Project cruft
+           packages.config          # Nuget config
+           Program.cs               # Main entry point of program
+       icaloc2014.sln               # Solution cruft
+     Gemfile                        # Gem dependencies
+     Gemfile.lock                   # Gems locked down
+     iCALOC2014.md                  # The assignment
+     LICENSE                        # License agreement
+     rakefile                       # Helper tasks to build, test and distribute your code 
+     README.md                      # This document
 ```
 
 #### HowTo's
@@ -61,18 +70,15 @@ $ bundle exec rake restore
 ```
 
 
-##### Rake
+##### Rake tasks (noteworthy)
 
-To compile the project
-```bash
-$ bundle exec rake quick_build
+
+```ruby
+$ bundle exec rake quick_build #compiles with detailed info
+$ bundle exec rake test        #restores nuget, builds and run tests
+$ bundle exec rake run         #restores nuget, builds and runs the program
+$ bundle exec rake -T          #see available rake tasks
 ```
-
-To run specs
-```bash
-$ bundle exec rake test
-```
-
 
 ##### NOTE!
 Please resend the assignment intact as a **zip-archive**. That is, in the same structure you got it, *with* all the files that came with it.
